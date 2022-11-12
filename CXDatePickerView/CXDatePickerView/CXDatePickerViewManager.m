@@ -169,6 +169,16 @@
 }
 
 #pragma mark - 初始化配置
+
+- (void)refreshYearArray {
+    [self.yearArray removeAllObjects];
+    NSLog(@"cx_year ------   %d",self.maxLimitDate.cx_year);
+    for (NSInteger i = MINYEAR; i<= self.maxLimitDate.cx_year; i++) {
+        NSString *num = [NSString stringWithFormat:@"%ld",(long)i];
+        [self.yearArray addObject:num];
+    }
+}
+
 - (void)defaultConfig {
     if (!_scrollToDate) {
         _scrollToDate = [NSDate date];
@@ -194,7 +204,7 @@
         [self.minuteArray addObject:num];
         [self.secondArray addObject:num];
     }
-    
+    NSLog(@"cx_year ------   %d",self.maxLimitDate.cx_year);
     for (NSInteger i = MINYEAR; i<= MAXYEAR; i++) {
         NSString *num = [NSString stringWithFormat:@"%ld",(long)i];
         [self.yearArray addObject:num];

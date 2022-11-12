@@ -57,6 +57,6 @@
 - (void)refreshScrollToDate;
 - (void)yearChange:(NSInteger)row;
 - (NSArray *)getNumberOfRowsInComponent;
-
+- (void)refreshYearArray;
 @end
 

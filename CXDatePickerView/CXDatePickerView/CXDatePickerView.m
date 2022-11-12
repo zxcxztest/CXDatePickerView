@@ -33,9 +33,17 @@ typedef void(^doneZeroDayBlock)(NSInteger days,NSInteger hours,NSInteger minutes
 
 @implementation CXDatePickerView
 
+- (void)setHideGreaterMaxLimitDate:(BOOL)hideGreaterMaxLimitDate {
+    _hideGreaterMaxLimitDate = hideGreaterMaxLimitDate;
+}
+
 - (void)setMaxLimitDate:(NSDate *)maxLimitDate {
     _maxLimitDate = maxLimitDate;
     self.manager.maxLimitDate = maxLimitDate;
+    if (self.hideGreaterMaxLimitDate) {
+        [self.manager refreshYearArray];
+        [self.datePicker reloadAllComponents];
+    }
 }
 
 - (void)setMinLimitDate:(NSDate *)minLimitDate {

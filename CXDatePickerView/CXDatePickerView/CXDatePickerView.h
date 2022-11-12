@@ -105,6 +105,11 @@
 @property (nonatomic, strong) UIColor *yearLabelColor;
 
 /**
+ *  是否隐藏大于最大时间的时间
+ */
+@property (nonatomic, assign) BOOL hideGreaterMaxLimitDate;
+
+/**
  *  隐藏每行年月日文字
  */
 @property (nonatomic, assign) BOOL hideDateNameLabel;
